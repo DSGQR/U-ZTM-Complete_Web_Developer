@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Better Keyless Car</title>
+</head>
+
+<body>
+
+  <script>
+    function checkDriverAge(age) {
+      console.log('How old are you?');
+
+      if (Number(age) < 18) {
+        return 'Sorry, you are too young to drive this car. Powering off';
+      } else if (Number(age) === 18) {
+        return 'Congratulations on your first year of driving. Enjoy the ride!';
+      } else if (Number(age) > 18) {
+        return 'Powering On. Enjoy the ride!';
+      }
+    }
+
+    checkDriverAge();
+    
+  </script>
+</body>
+
+</html>
