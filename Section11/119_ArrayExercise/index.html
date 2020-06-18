@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Exercise</title>
+  <style>
+    body {
+      background-color: #131313;
+    }
+
+    h2 {
+      color: crimson;
+    }
+
+    div {
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      color: aqua;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: solid #88aceb 2px;
+      border-radius: 15px;
+      margin-left: 10px;
+      background-color: #88aceb;
+      font-size: medium;
+      color: #fff;
+    }
+
+    button:hover {
+      background-color: #fff;
+      color: #88aceb;
+    }
+
+    p {
+      margin-left: 25px;
+    }
+
+    span {
+      color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Array Exercise</h2>
+
+  <div class="given">
+    <h3>Given Array:</h3>
+    <p id="givenArr"></p>
+  </div>
+
+  <div class="first">
+    <h3>1. Remove Banana From The Array:</h3>
+    <button onclick="shift()">Remove From The Front</button>
+    <p>Result: <span id="first">Banana, Apples, Oranges, Blueberries</span></p>
+    <hr>
+  </div>
+
+  <div class="second">
+    <h3>2. Sort the array in order.</h3>
+    <button onclick="sort()">Sort List</button>
+    <p>Result: <span id="second">Banana, Apples, Oranges, Blueberries</span></p>
+    <hr>
+  </div>
+
+  <div class="third">
+    <h3>3. Put "Kiwi" at the end of the array.</h3>
+    <button onclick="push()">Add Kiwi</button>
+    <p>Result: <span id="third">Banana, Apples, Oranges, Blueberries</span></p>
+    <hr>
+  </div>
+
+  <div class="fourth">
+    <h3>4. Remove "Apples" from the array.</h3>
+    <button onclick="splice()">Be Gone Apples!</button>
+    <p>Result: <span id="fourth">Banana, Apples, Oranges, Blueberries</span></p>
+    <hr>
+  </div>
+
+  <div class="fifth">
+    <h3>5. Sort the array in reverse order. (Not alphabetical, but reverse the current Array i.e. ['a', 'c', 'b']
+      becomes ['b', 'c', 'a'])</h3>
+    <button onclick="reverse()">Reverse Order</button>
+    <p>Result: <span id="fifth">Banana, Apples, Oranges, Blueberries</span></p>
+    <hr>
+  </div>
+
+  <div class="sixth">
+    <h3>6. What you should be left with if you combined the above actions together.</h3>
+    <button onclick="myfunction()">See What's Left</button>
+    <p>Result: <span id="sixth">Banana, Apples, Oranges, Blueberries</span></p>
+    <hr>
+  </div>
+
+
+  <script>
+    let array = ['Banana', 'Apples', 'Oranges', 'Blueberries'];
+    let arrayString = array.join(', ');
+    document.getElementById('givenArr').innerHTML = arrayString;
+    console.log(`Original Array: ${arrayString}`)
+
+    // 1. Remove the Banana from the array.
+    function shift() {
+      let array = ['Banana', 'Apples', 'Oranges', 'Blueberries'];
+      array.shift();
+      let arrayString = array.join(', ');
+      document.getElementById('first').innerHTML = arrayString;
+      console.log(`1. Remove Banana: ${arrayString}`)
+    }
+
+    // 2. Sort the array in order.
+    function sort() {
+      let array = ['Banana', 'Apples', 'Oranges', 'Blueberries'];
+      array.sort();
+      let arrayString = array.join(', ');
+      document.getElementById('second').innerHTML = arrayString;
+      console.log(`2. Sort Array: ${arrayString}`)
+    }
+
+    // 3. Put "Kiwi" at the end of the array.
+    function push() {
+      let array = ['Banana', 'Apples', 'Oranges', 'Blueberries'];
+      array.push('Kiwi');
+      let arrayString = array.join(', ');
+      document.getElementById('third').innerHTML = arrayString;
+      console.log(`3. Add Kiwi: ${arrayString}`)
+    }
+
+    // 4. Remove "Apples" from the array.
+    function splice() {
+      let array = ['Banana', 'Apples', 'Oranges', 'Blueberries'];
+      array.splice(1, 1);
+      let arrayString = array.join(', ');
+      document.getElementById('fourth').innerHTML = arrayString;
+      console.log(`4. Remove Apples: ${arrayString}`)
+    }
+
+    // 5. Sort the array in reverse order. (Not alphabetical, but reverse
+    // the current Array i.e. ['a', 'c', 'b'] becomes ['b', 'c', 'a'])
+    function reverse() {
+      let array = ['Banana', 'Apples', 'Oranges', 'Blueberries'];
+      array.reverse();
+      let arrayString = array.join(', ');
+      document.getElementById('fifth').innerHTML = arrayString;
+      console.log(`5. Reverse Order: ${arrayString}`)
+    }
+
+    // 6. What you should be left with ["Kiwi", "Oranges", "Blueberries"]
+    function myfunction() {
+      let array = ['Banana', 'Apples', 'Oranges', 'Blueberries'];
+      array.shift();
+      console.log(`1. Remove Banana: ${array}`)
+      array.sort();
+      console.log(`2. Sort Array: ${array}`)
+      array.push('Kiwi');
+      console.log(`3. Add Kiwi: ${array}`)
+      array.splice(0, 1);
+      console.log(`4. Remove Apples: ${array}`)
+      array.reverse();
+      console.log(`5. Reverse Order: ${array}`)
+      let arrayString = array.join(', ');
+      document.getElementById('sixth').innerHTML = arrayString;
+      console.log(`6. Whats left: ${arrayString}`)
+    }
+  </script>
+</body>
+
+</html>
